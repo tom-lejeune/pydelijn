@@ -1,4 +1,8 @@
-# pydelijn [![GitHub version](https://badge.fury.io/gh/bollewolle%2Fpydelijn.svg)](https://badge.fury.io/gh/bollewolle%2Fpydelijn) [![Build Status](https://travis-ci.com/bollewolle/pydelijn.svg?branch=master)](https://travis-ci.com/bollewolle/pydelijn) [![PyPI version](https://badge.fury.io/py/pydelijn.svg)](https://badge.fury.io/py/pydelijn)
+# pydelijn
+
+[![PyPI version](https://badge.fury.io/py/pydelijn.svg)](https://pypi.org/project/pydelijn)
+[![Build Status](https://github.com/emilv2/pydelijn/actions/workflows/ci.yml/badge.svg)](https://github.com/Emilv2/pydelijn/actions/workflows/ci.yml)
+
 A Python package to retrieve realtime data of passages at stops of De Lijn, the public transport company in Flanders (Belgium)
 
 Main purpose at the moment is to feed a sensor in Home-Assistant
