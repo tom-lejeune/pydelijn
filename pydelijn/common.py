@@ -5,7 +5,7 @@ import async_timeout
 import aiohttp
 
 LOGGER = logging.getLogger(__name__)
-BASE_URL = "https://api.delijn.be/DLKernOpenData/v1/beta/"
+BASE_URL = "https://api.delijn.be/DLKernOpenData/api/v1/"
 
 
 class CommonFunctions:
