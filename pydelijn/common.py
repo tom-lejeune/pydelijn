@@ -35,15 +35,15 @@ class CommonFunctions:
 
                 elif response.status == 401:
                     message = "401: Acces token might be incorrect"
-                    raise HttpException(message, await response.text(), response.status)
+                    raise HttpException(message, await response.text(), response.status, endpoint, headers)
 
                 elif response.status == 404:
                     message = "404: incorrect API request"
-                    raise HttpException(message, await response.text(), response.status)
+                    raise HttpException(message, await response.text(), response.status, endpoint, headers)
 
                 else:
                     message = f"Unexpected status code {response.status}."
-                    raise HttpException(message, await response.text(), response.status)
+                    raise HttpException(message, await response.text(), response.status, endpoint, headers)
 
         except aiohttp.ClientError as error:
             LOGGER.error("Error connecting to De Lijn API: %s", error)
@@ -59,9 +59,11 @@ class CommonFunctions:
 class HttpException(Exception):
     """HTTP exception class with message text, and status code."""
 
-    def __init__(self, message, text, status_code):
+    def __init__(self, message, text, status_code, url, headers):
         """Initialize the class."""
-        super().__init__(message)
+        super().__init__("message: " + message + ", url: " + url + ", headers: " + str(headers))
 
         self.status_code = status_code
         self.text = text
+        self.url = url
+        self.headers = headers
