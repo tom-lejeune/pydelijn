@@ -129,10 +129,16 @@ class Passages:
                         realtime_info = passage.get("predictionStatussen")
                         if realtime_info[0] == "GEENREALTIME":
                             is_realtime = False
+                            cancelled = False
                         elif realtime_info[0] == "REALTIME":
                             is_realtime = True
+                            cancelled = False
+                        elif realtime_info[0] == "GESCHRAPT":
+                            is_realtime = False
+                            cancelled = True
                         else:
                             is_realtime = False
+                            cancelled = False
                             LOGGER.warning("unknown realtime info: %s", realtime_info)
 
                         due_in_min = None
@@ -215,6 +221,7 @@ class Passages:
                                         "due_at_realtime": due_at_realtime,
                                         "due_in_min": due_in_min,
                                         "is_realtime": is_realtime,
+                                        "cancelled": cancelled,
                                         "line_number_public": linenumberpublic,
                                         "line_desc": linedesc,
                                         "line_transport_type": linetransporttype,
