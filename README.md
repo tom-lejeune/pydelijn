@@ -1,4 +1,4 @@
-# pydelijn
+# pydelijn (do not use, going to update to latest API version)
 
 [![PyPI version](https://badge.fury.io/py/pydelijn.svg)](https://pypi.org/project/pydelijn)
 [![Build Status](https://github.com/emilv2/pydelijn/actions/workflows/ci.yml/badge.svg)](https://github.com/Emilv2/pydelijn/actions/workflows/ci.yml)
